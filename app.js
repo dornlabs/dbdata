@@ -1,3 +1,4 @@
+// for the high velocity collection of data though the socket.io interface from any other client, python, java, nodejs, c++, etc...
 const mongodb = require('mongodb')
 const MongoClient = mongodb.MongoClient;
 const mongoUriBuilder = require( 'mongo-uri-builder' );
