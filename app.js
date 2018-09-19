@@ -14,7 +14,7 @@ function returnConnectionStringReplica(){
 function getDbPromise( _prop1, _prop2 ) {      
     let url = _prop1;
     let dbname  = _prop2;
-        console.log( "Mongodb attempted connection to: " , url, " dbname: ", dbname , " in accessDbAsyncAndExecCallBacks" )
+        console.log( "Mongodb attempted connection to: " , url, " dbname: ", dbname )
         return new Promise ( ( resolve , reject )=>{
             try{
                 MongoClient.connect( url , { useNewUrlParser: true } , ( err, conndb )=>{
