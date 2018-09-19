@@ -11,13 +11,13 @@ function returnConnectionStringReplica(){
      });    
 }
 function getDbPromise( _prop1, _prop2 ) {      
-    let _url = _prop1;
-    let _dbname  = _prop2;
-        console.log( "Mongodb attempted connection to: " , _url, " dbname: ", _dbname , " in accessDbAsyncAndExecCallBacks" )
+    let url = _prop1;
+    let dbname  = _prop2;
+        console.log( "Mongodb attempted connection to: " , url, " dbname: ", dbname , " in accessDbAsyncAndExecCallBacks" )
         return new Promise ( ( resolve , reject )=>{
             try{
-                MongoClient.connect( _url , { useNewUrlParser: true } , ( err, conndb )=>{
-                    let db = conndb.db( _dbname );
+                MongoClient.connect( url , { useNewUrlParser: true } , ( err, conndb )=>{
+                    let db = conndb.db( dbname );
                     if ( db!=null && typeof(db) != undefined ){
                             resolve( db );
                             } 
@@ -26,7 +26,7 @@ function getDbPromise( _prop1, _prop2 ) {
                             }
                         });
                     }catch( _err ) {
-                            console.log( "Mongodb error connecting to: ", _url ," dbname: ", _dbname );
+                            console.log( "Mongodb error connecting to: ", url ," dbname: ", dbname );
                             console.log( "Exception caught and passed: " + _err );                        
                     }
             });
