@@ -101,5 +101,4 @@ function main(){
 
 });
 
-}
-main()
+}();
